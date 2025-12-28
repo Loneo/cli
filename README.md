@@ -17,9 +17,9 @@ The open-source Mintlify alternative. Beautiful documentation sites from Markdow
 ### Global Installation
 
 ```bash
-npm install -g superdocs
+npm install -g @devrohit06/superdocs
 # or
-pnpm add -g superdocs
+pnpm add -g @devrohit06/superdocs
 ```
 
 ### Local Development
@@ -41,6 +41,7 @@ superdocs build --input ./my-docs --output ./dist
 ```
 
 **Options:**
+
 - `-i, --input <path>` (required) - Path to your docs folder
 - `-o, --output <path>` - Output directory (default: `./dist`)
 - `-t, --theme <name>` - Theme to use (`default`, `dark`)
@@ -48,6 +49,7 @@ superdocs build --input ./my-docs --output ./dist
 - `--search` - Enable search functionality
 
 **Example:**
+
 ```bash
 superdocs build \
   --input ./docs \
@@ -66,6 +68,7 @@ superdocs dev --input ./my-docs
 ```
 
 **Options:**
+
 - `-i, --input <path>` (required) - Path to your docs folder
 - `-t, --theme <name>` - Theme to use
 - `-b, --base-url <url>` - Base URL for the site
@@ -73,6 +76,7 @@ superdocs dev --input ./my-docs
 - `--search` - Enable search functionality
 
 **Example:**
+
 ```bash
 superdocs dev --input ./docs --port 3000
 ```
@@ -86,6 +90,7 @@ superdocs eject --input ./my-docs --output ./my-project
 ```
 
 **Options:**
+
 - `-i, --input <path>` (required) - Path to your docs folder
 - `-o, --output <path>` - Output directory for the project (default: `./astro-docs-project`)
 - `-t, --theme <name>` - Theme to use
