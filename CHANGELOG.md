@@ -1,0 +1,59 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2025-12-28 (Pre-Release)
+
+### Added
+
+- **CLI Tool**: Complete command-line interface for documentation generation
+- **Build Command**: Generate static documentation sites with `superdocs build`
+- **Dev Command**: Start a development server with hot reload using `superdocs dev`
+- **Eject Command**: Export full Astro project source code for customization with `superdocs eject`
+- **Astro Integration**: Built on Astro for lightning-fast static site generation
+- **Markdown & MDX Support**: Full support for both formats with frontmatter
+- **SEO Optimization**: Meta tags, semantic HTML, and proper structure
+- **Responsive Design**: Mobile-friendly documentation interface
+- **Rich Component Library**:
+  - API Playground component
+  - Breadcrumbs navigation
+  - Search modal
+  - Sidebar with grouping
+  - Table of contents
+  - Theme toggle
+  - Tooltip component
+  - Accordion, Alert, Badge, Cards, Code groups, and more
+- **Hot Reload**: Development server with file watching
+- **Fast Builds**: Optimized static site generation
+- **Theme Support**: Custom themes and base URLs
+- **Project Scaffolding**: Automatic Astro project creation from templates
+- **Configuration Sync**: Dynamic config generation based on user options
+
+### Dependencies
+
+- `@astrojs/mdx`: ^3.1.0
+- `@clack/prompts`: ^0.11.0
+- `astro`: ^4.16.0
+- `chokidar`: ^4.0.0
+- `commander`: ^12.1.0
+- `execa`: ^9.0.0
+- `fs-extra`: ^11.2.0
+- `picocolors`: ^1.1.1
+- `zod`: ^3.23.0
+
+### Known Issues
+
+- Search functionality implemented but may need further testing
+- Some advanced MDX features still being refined
+- Windows compatibility testing ongoing
+
+### What's Next
+
+- Enhanced search capabilities
+- Additional themes and customization options
+- Plugin system for extensions
+- Improved Windows support
+- More component integrations
