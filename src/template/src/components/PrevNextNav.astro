@@ -1,5 +1,6 @@
 ---
 import { getConfigFile } from '../utils/config';
+import { createLink } from '../utils/url';
 
 const { pathname } = Astro.url;
 const config = await getConfigFile();
@@ -37,7 +38,7 @@ const nextPage = currentIndex < allPages.length - 1 ? allPages[currentIndex + 1]
   <nav class="prev-next-nav" aria-label="Page navigation">
     <div class="prev-next-container">
       {prevPage ? (
-        <a href={prevPage.href} class="prev-next-link prev">
+        <a href={createLink(prevPage.href)} class="prev-next-link prev">
           <span class="prev-next-direction">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m15 18-6-6 6-6"/>
@@ -51,7 +52,7 @@ const nextPage = currentIndex < allPages.length - 1 ? allPages[currentIndex + 1]
       )}
       
       {nextPage ? (
-        <a href={nextPage.href} class="prev-next-link next">
+        <a href={createLink(nextPage.href)} class="prev-next-link next">
           <span class="prev-next-direction">
             Next
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

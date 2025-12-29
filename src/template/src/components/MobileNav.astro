@@ -4,6 +4,7 @@
  * Triggered by hamburger menu in Header
  */
 import { getConfigFile } from '../utils/config';
+import { createLink } from '../utils/url';
 
 const config = await getConfigFile();
 const { sidebar } = config.navigation;
@@ -29,7 +30,7 @@ const { sidebar } = config.navigation;
           <ul class="mobile-nav-list">
             {group.items?.map((item) => (
               <li>
-                <a href={`/${item.slug}`} class="mobile-nav-link">
+                <a href={createLink(item.href || `/${item.slug}`)} class="mobile-nav-link">
                   {item.label}
                 </a>
               </li>

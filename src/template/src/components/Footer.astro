@@ -1,5 +1,6 @@
 ---
 import { getConfigFile } from '../utils/config';
+import { createLink } from '../utils/url';
 
 const config = await getConfigFile();
 const { footer } = config;
@@ -16,7 +17,7 @@ const { footer } = config;
               {section.items.map((item) => (
                 <li>
                   <a 
-                    href={item.href}
+                    href={createLink(item.href)}
                     class="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item.label}

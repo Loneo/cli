@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar.astro';
 import MobileNav from '../components/MobileNav.astro';
 import SearchModal from '../components/SearchModal.astro';
 import { getConfigFile } from '../utils/config';
+import { createLink } from '../utils/url';
 import '../styles/global.css';
 
 interface Props {
@@ -28,7 +29,7 @@ const config = await getConfigFile();
     <meta property="og:description" content={description || config.metadata.description} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content={config.seo.twitterHandle} />
-    <link rel="icon" href={config.branding.favicon} />
+    <link rel="icon" href={createLink(config.branding.favicon)} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

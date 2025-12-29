@@ -1,5 +1,6 @@
 ---
 import type { SidebarGroup } from '../types/config';
+import { createLink, isLinkActive } from '../utils/url';
 
 interface Props {
   group: SidebarGroup;
@@ -13,9 +14,8 @@ const groupId = group.label.toLowerCase().replace(/\s+/g, '-');
 
 const isActive = (item: any) => {
   const itemPath = item.href || `/${item.slug}`;
-  const normalizedPath = currentPath.replace(/\/$/, '');
-  const normalizedItemPath = itemPath.replace(/\/$/, '');
-  return normalizedPath === normalizedItemPath || normalizedPath === `${normalizedItemPath}.html`;
+  const fullItemPath = createLink(itemPath);
+  return isLinkActive(fullItemPath, currentPath);
 };
 
 // Check if any item in this group is active (for auto-expand)
@@ -33,11 +33,12 @@ const hasActiveItem = group.items?.some((item) => isActive(item)) ?? false;
   <ul class="sidebar-group-items list-none m-0 p-0 space-y-1 overflow-hidden transition-all duration-200">
     {group.items?.map((item) => {
         const itemHref = item.href || `/${item.slug}`;
+        const fullHref = createLink(itemHref);
         const active = isActive(item);
         return (
         <li>
             <a 
-            href={itemHref}
+            href={fullHref}
             class={active ? 'sidebar-link sidebar-link-active' : 'sidebar-link'}
             aria-current={active ? 'page' : undefined}
             >

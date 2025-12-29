@@ -3,6 +3,7 @@
  * SearchModal - ⌘K / Ctrl+K Search Modal
  * Uses Pagefind for static search (must build first to index content)
  */
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
@@ -119,7 +120,7 @@
   }
 </style>
 
-<script>
+<script define:vars={{ base }}>
   let pagefind: any = null;
   let selectedIndex = 0;
   let results: any[] = [];
@@ -164,12 +165,17 @@
         return;
       }
       
-      resultsContainer.innerHTML = searchResults.map((result, i) => `
-        <a href="${result.url}" class="search-result-item ${i === selectedIndex ? 'selected' : ''}" data-index="${i}">
+      resultsContainer.innerHTML = searchResults.map((result, i) => {
+        let url = result.url;
+        if (base && !url.startsWith(base) && !url.startsWith('http')) {
+             url = base + url;
+        }
+        return `
+        <a href="${url}" class="search-result-item ${i === selectedIndex ? 'selected' : ''}" data-index="${i}">
           <div class="search-result-title">${result.meta?.title || result.url}</div>
           <div class="search-result-excerpt">${result.excerpt || ''}</div>
         </a>
-      `).join('');
+      `}).join('');
       
       // Add click handlers
       resultsContainer.querySelectorAll('.search-result-item').forEach((item) => {

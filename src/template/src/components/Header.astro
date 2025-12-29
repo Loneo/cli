@@ -1,5 +1,6 @@
 ---
 import { getConfigFile } from '../utils/config';
+import { createLink } from '../utils/url';
 import ThemeToggle from './ThemeToggle.astro';
 
 const config = await getConfigFile();
@@ -23,7 +24,7 @@ const { navbar } = config.navigation;
 
     <!-- Logo -->
     <div class="flex items-center gap-4">
-      <a href={config.branding.logo.href} class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <a href={createLink(config.branding.logo.href)} class="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <span class="text-2xl">📚</span>
         <h1 class="text-lg font-bold text-foreground m-0 tracking-tight hidden sm:block">
           {config.metadata.name}
@@ -35,7 +36,7 @@ const { navbar } = config.navigation;
     <nav class="hidden md:flex items-center gap-6">
       {navbar.links?.map((link) => (
         <a 
-          href={link.href} 
+          href={createLink(link.href)} 
           class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           target={link.href.startsWith('http') ? '_blank' : undefined}
           rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -64,7 +65,7 @@ const { navbar } = config.navigation;
       <ThemeToggle />
       
       {navbar.cta && (
-        <a href={navbar.cta.href} class="cta-button hidden sm:inline-flex">
+        <a href={createLink(navbar.cta.href)} class="cta-button hidden sm:inline-flex">
           {navbar.cta.label}
         </a>
       )}

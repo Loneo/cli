@@ -5,6 +5,7 @@ import DocsFeatureGrid from '../components/landing/DocsFeatureGrid.astro';
 import DocsFeature from '../components/landing/DocsFeature.astro';
 import Footer from '../components/Footer.astro';
 import { getConfigFile, getNavigation } from '../utils/config';
+import { createLink } from '../utils/url';
 
 const config = await getConfigFile();
 const shouldRenderLanding = config.landing?.enabled ?? false;
@@ -17,7 +18,7 @@ if (!shouldRenderLanding) {
   if (nav?.sidebar && nav.sidebar.length > 0) {
       const firstGroup = nav.sidebar[0];
       if (firstGroup.items.length > 0) {
-          redirectUrl = `/${firstGroup.items[0].slug}`;
+          redirectUrl = createLink(`/${firstGroup.items[0].slug}`);
       }
   }
 }

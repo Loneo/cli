@@ -1,4 +1,6 @@
 ---
+import { createLink } from '../../utils/url';
+
 interface Props {
   title?: string;
   href?: string;
@@ -8,10 +10,11 @@ interface Props {
 const { title, href, icon } = Astro.props;
 
 const Tag = href ? 'a' : 'div';
+const link = href ? createLink(href) : undefined;
 ---
 
 <Tag 
-  href={href}
+  href={link}
   class={`
     block not-prose p-6 rounded border border-border bg-card 
     transition-all duration-300 hover:border-ring hover:shadow-lg

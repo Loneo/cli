@@ -1,5 +1,6 @@
 ---
 import { getConfigFile } from '../utils/config';
+import { createLink } from '../utils/url';
 
 const { pathname } = Astro.url;
 const config = await getConfigFile();
@@ -63,7 +64,7 @@ if (!found && currentSlug) {
             {item.label}
           </span>
         ) : item.href ? (
-          <a href={item.href} class="hover:text-foreground transition-colors duration-200">
+          <a href={createLink(item.href)} class="hover:text-foreground transition-colors duration-200">
             {item.label}
           </a>
         ) : (
