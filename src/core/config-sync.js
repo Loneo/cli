@@ -50,7 +50,7 @@ export async function generateNavigationFromDocs(docsPath) {
     if (rootFiles.length > 0) {
       sidebar.push({
         label: 'Getting Started',
-        icon: 'rocket',
+        icon: 'lucide:rocket',
         items: rootFiles,
       });
     }
