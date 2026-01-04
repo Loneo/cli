@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-01-04
+
+### Added
+
+- **Documentation Versioning**: Support for versioned documentation
+- **Hosting Provider Support**: New `--provider` option for optimized builds (Vercel, Netlify, Cloudflare, static)
+- **Rendering Modes**: New `--rendering` option supporting static, server, and hybrid modes
+- **Dynamic Theme Generation**: Generate OKLCH color palettes from primary color with automatic light/dark mode support
+- **i18n Support**: Automatic detection and syncing of locale folders with 40+ language codes
+- **Asset Syncing**: Automatic syncing of `_assets`, `_images`, `_css`, and `public` folders
+
+### Changed
+
+- **Organization Migration**: Moved to official Lito-docs organization on GitHub
+  - CLI repository: `Lito-docs/cli`
+  - Template repository: `Lito-docs/template`
+  - Documentation repository: `Lito-docs/docs`
+- **Default Template**: Updated default template source to `github:Lito-docs/template`
+- **Branding**: Updated project description to "Beautiful documentation sites from Markdown. Fast, simple, and open-source."
+- **Optimized Sync**: Improved sync pipeline with parallel processing for faster builds
+- **CLI Sync**: Improved sync to handle versioned documentation folders
+- **Smart Layout Injection**: Automatic layout detection (MarkdownLayout vs APILayout) based on frontmatter
+
+### Improved
+
+- **Code Quality**: Optimized async operations with Promise.all for parallel execution
+- **Error Handling**: Better error handling throughout the CLI pipeline
+
 ## [0.3.5] - 2026-01-02
 
 ### Added
@@ -35,10 +63,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Use `--template github:owner/repo` to specify a GitHub template
   - Support for specific branches/tags: `github:owner/repo#v1.0.0`
   - Support for subdirectories: `github:owner/repo/path/to/template`
-- **Template Caching**: Templates are cached locally for 24 hours in `~/.superdocs/templates/`
+- **Template Caching**: Templates are cached locally for 24 hours in `~/.lito/templates/`
 - **Template Management Commands**:
-  - `superdocs template list` - List available templates
-  - `superdocs template cache --clear` - Clear template cache
+  - `lito template list` - List available templates
+  - `lito template cache --clear` - Clear template cache
 - **Force Refresh**: Use `--refresh` flag to bypass cache and re-download templates
 - **Local Templates**: Use local template folders with `--template ./path/to/template`
 - **Template Registry**: Shorthand names for official templates
@@ -50,7 +78,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- Bundled template (now fetched from `github:DevRohit06/superdocs-default-template`)
+- Bundled template (now fetched from `github:Lito-docs/template`)
 
 ## [0.2.2] - 2025-12-29
 
@@ -81,9 +109,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **CLI Tool**: Complete command-line interface for documentation generation
-- **Build Command**: Generate static documentation sites with `superdocs build`
-- **Dev Command**: Start a development server with hot reload using `superdocs dev`
-- **Eject Command**: Export full Astro project source code for customization with `superdocs eject`
+- **Build Command**: Generate static documentation sites with `lito build`
+- **Dev Command**: Start a development server with hot reload using `lito dev`
+- **Eject Command**: Export full Astro project source code for customization with `lito eject`
 - **Astro Integration**: Built on Astro for lightning-fast static site generation
 - **Markdown & MDX Support**: Full support for both formats with frontmatter
 - **SEO Optimization**: Meta tags, semantic HTML, and proper structure
@@ -113,7 +141,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `execa`: ^9.0.0
 - `fs-extra`: ^11.2.0
 - `picocolors`: ^1.1.1
-- `zod`: ^3.23.0
 
 ### Known Issues
 
