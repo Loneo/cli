@@ -26,7 +26,7 @@ export async function ejectCommand(options) {
     }
 
     console.clear();
-    intro(pc.inverse(pc.cyan(' SuperDocs - Eject ')));
+    intro(pc.inverse(pc.cyan(' Lito - Eject ')));
 
     const s = spinner();
 
