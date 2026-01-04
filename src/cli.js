@@ -16,7 +16,7 @@ export async function cli() {
     .description(
       "Beautiful documentation sites from Markdown. Fast, simple, and open-source."
     )
-    .version("0.5.0");
+    .version("0.5.1");
 
   program
     .command("build")
