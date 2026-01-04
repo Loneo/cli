@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Cache directory for downloaded templates
-const CACHE_DIR = join(homedir(), '.superdocs', 'templates');
+const CACHE_DIR = join(homedir(), '.lito', 'templates');
 
 /**
  * Parse a template specification string into a structured format
@@ -71,7 +71,7 @@ export async function getCachedTemplate(owner, repo, ref) {
 
   if (await pathExists(cachePath)) {
     // Check if cache metadata exists and is valid
-    const metaPath = join(cachePath, '.superdocs-cache.json');
+    const metaPath = join(cachePath, '.lito-cache.json');
     if (await pathExists(metaPath)) {
       const meta = await readJson(metaPath);
       // Cache is valid for 24 hours by default
@@ -91,7 +91,7 @@ export async function getCachedTemplate(owner, repo, ref) {
 export async function fetchGitHubTemplate(owner, repo, ref) {
   const cacheKey = getCacheKey(owner, repo, ref);
   const cachePath = join(CACHE_DIR, cacheKey);
-  const tempTarPath = join(tmpdir(), `superdocs-${cacheKey}.tar.gz`);
+  const tempTarPath = join(tmpdir(), `lito-${cacheKey}.tar.gz`);
 
   // Ensure cache directory exists
   await ensureDir(CACHE_DIR);
@@ -102,7 +102,7 @@ export async function fetchGitHubTemplate(owner, repo, ref) {
   const response = await fetch(tarballUrl, {
     headers: {
       'Accept': 'application/vnd.github+json',
-      'User-Agent': 'superdocs-cli'
+      'User-Agent': 'lito-cli'
     },
     redirect: 'follow'
   });
@@ -133,7 +133,7 @@ export async function fetchGitHubTemplate(owner, repo, ref) {
   await remove(tempTarPath);
 
   // Write cache metadata
-  const metaPath = join(cachePath, '.superdocs-cache.json');
+  const metaPath = join(cachePath, '.lito-cache.json');
   await writeJson(metaPath, {
     owner,
     repo,
@@ -193,7 +193,7 @@ export async function getTemplatePath(themeSpec, forceRefresh = false) {
       const { resolveRegistryName } = await import('./template-registry.js');
       const resolved = resolveRegistryName(parsed.name);
       if (!resolved) {
-        throw new Error(`Unknown template: ${parsed.name}. Use 'superdocs template list' to see available templates.`);
+        throw new Error(`Unknown template: ${parsed.name}. Use 'lito template list' to see available templates.`);
       }
       // Recursively resolve the GitHub URL
       return await getTemplatePath(resolved);
@@ -227,7 +227,7 @@ export async function listCachedTemplates() {
   const templates = [];
   for (const entry of entries) {
     if (entry.isDirectory()) {
-      const metaPath = join(CACHE_DIR, entry.name, '.superdocs-cache.json');
+      const metaPath = join(CACHE_DIR, entry.name, '.lito-cache.json');
       if (await pathExists(metaPath)) {
         const meta = await readJson(metaPath);
         templates.push({
